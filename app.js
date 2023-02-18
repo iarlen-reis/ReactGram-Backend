@@ -13,7 +13,24 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 // cors
+const whitelist = [
+  "https://reactgram.iarlenreis.com.br",
+  "https://www.reactgram-backend.iarlenreis.com.br/",
+  "http://localhost:3000",
+];
+
+const corsOptions = {
+  origin(origin, callback) {
+    if (whitelist.indexOf(origin) !== -1 || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+};
+
 app.use(cors({ credentials: true, origin: "http://localhost:3000" }));
+app.use(cors(corsOptions));
 
 // Upload directory
 app.use("/uploads", express.static(path.join(__dirname, "/uploads")));
