@@ -17,6 +17,7 @@ const whitelist = [
   "https://reactgram.iarlenreis.com.br",
   "https://www.reactgram-backend.iarlenreis.com.br/",
   "http://localhost:3000",
+  "http://localhost:5173",
 ];
 
 const corsOptions = {
