@@ -139,7 +139,7 @@ const updatePhoto = async (req, res) => {
     }
 
     await photo.save();
-    res.status(200).json(photo);
+    res.status(200).json({ photo, message: "Foto atualizada com sucesso!" });
   } catch (error) {
     res.status(422).json({
       errors: ["Ocorreu um erro, por favor tente novamente mais tarde."],
