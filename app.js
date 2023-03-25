@@ -14,10 +14,14 @@ app.use(express.urlencoded({ extended: false }));
 
 // cors
 const whitelist = [
-  "https://reactgram.iarlenreis.com.br",
+  "https://reactgram.iarlenreis.com.br/",
   "https://www.reactgram-backend.iarlenreis.com.br/",
   "http://localhost:3000",
   "http://localhost:5173",
+  "http://localhost:5000",
+  'https://reactgram.iarlenreis.com.br',
+  'https://hr79sy-5000.preview.csb.app/',
+  'https://hr79sy-5000.preview.csb.app',
 ];
 
 const corsOptions = {
